@@ -1,0 +1,611 @@
+demo()
+> mydata <- read.table(("C:/myfolder/abc.txt",
+Error: unexpected ',' in "mydata <- read.table(("C:/myfolder/abc.txt","
+> header=TRUE, sep="\t", na.strings = "-9") 
+Error: unexpected ',' in "header=TRUE,"
+> mydata <- read.table(("C:\Users\USER\Downloads\weblog.txt",header=TRUE, sep="\t", na.strings = "-9")
+Error: '\U' used without hex digits in character string starting ""C:\U"
+> mydata <- read.table("C:\Users\USER\Downloads\weblog.txt",header=TRUE, sep="\t", na.strings = "-9")
+Error: '\U' used without hex digits in character string starting ""C:\U"
+> mydata <- read.table("C:\\Users\\USER\\Downloads\\weblog.txt",header=TRUE, sep="\\t", na.strings = "-9")
+Error in scan(file, what = "", sep = sep, quote = quote, nlines = 1, quiet = TRUE,  : 
+  invalid 'sep' value: must be one byte
+> mydata <- read.table("C:\\Users\\USER\\Downloads\\weblog.txt",header=TRUE, sep="\t", na.strings = "-9")
+> colnames(mytable)=c('host','ident','authuser','date','time','request','status','bytes','duration')
+Error in colnames(mytable) = c("host", "ident", "authuser", "date", "time",  : 
+  object 'mytable' not found
+> colnames(mydata)=c('host','ident','authuser','date','time','request','status','bytes','duration')
+Error in `colnames<-`(`*tmp*`, value = c("host", "ident", "authuser",  : 
+  'names' attribute [9] must be the same length as the vector [1]
+> df = read.table('webapp.log')
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'webapp.log': No such file or directory
+> df = read.table('C:\Users\USER\Downloads\weblog.txt')
+Error: '\U' used without hex digits in character string starting "'C:\U"
+> df = read.table('C:\\Users\\USER\\Downloads\\weblog.txt')
+> colnames(mydata)=c('host','ident','authuser','date','time','request','status','bytes','duration')
+Error in `colnames<-`(`*tmp*`, value = c("host", "ident", "authuser",  : 
+  'names' attribute [9] must be the same length as the vector [1]
+> colnames(LOGS)=c('host','ident','authuser','date','time','request','status','bytes','duration')
+> df$date=as.Date(df$date,"[%d/%b/%Y")
+> head(df)
+           host ident authuser       date   time                                             request status  bytes
+1 82.95.120.160     -        - 2009-05-14 -0700]                       GET www.twibuzz.com/ HTTP/1.1    200 112813
+2 82.95.120.160     -        - 2009-05-14 -0700]              GET www.twibuzz.com/style.css HTTP/1.1    200    639
+3 82.95.120.160     -        - 2009-05-14 -0700]               GET www.twibuzz.com/logo.png HTTP/1.1    200   5410
+4 82.95.120.160     -        - 2009-05-14 -0700]            GET www.twibuzz.com/favicon.ico HTTP/1.1    404      -
+5 66.249.70.102     -        - 2009-05-14 -0700] GET www.twibuzz.com/cgi/tweets.py?q=denver HTTP/1.1    200   7322
+6 66.249.70.102     -        - 2009-05-14 -0700]    GET www.twibuzz.com/cgi/tweets.py?q=nba HTTP/1.1    200   5898
+                 duration
+1                       -
+2 http://www.twibuzz.com/
+3 http://www.twibuzz.com/
+4 http://www.twibuzz.com/
+5                       -
+6                       -
+                                                                                                                       NA
+1 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+2 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+3 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+4 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+5                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+6                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+> ggplot(data=reqs, aes(x=as.Date(Var1), y=Freq)) + geom_line() + xlab('Date') + ylab('Requests') + opts(title='Traffic to Site')
+Error: could not find function "ggplot"
+> reqs=as.data.frame(table(df$date))
+> table(df$status)
+
+ 200  206  302  304  404  500 
+2196    1  151  203  226    1 
+> table(df$status)
+
+ 200  206  302  304  404  500 
+2196    1  151  203  226    1 
+> ggplot(data=reqs, aes(x=as.Date(Var1), y=Freq)) + geom_line() + xlab('Date') + ylab('Requests') + opts(title='Traffic to Site')
+Error: could not find function "ggplot"
+> reqs=as.data.frame(table(df$date))
+> head(reqs)
+        Var1 Freq
+1 2009-05-14  513
+2 2009-05-15  452
+3 2009-05-16  499
+4 2009-05-17  435
+5 2009-05-18  296
+6 2009-05-19  583
+> install.packages(ggplot2)
+Error in install.packages(ggplot2) : object 'ggplot2' not found
+> install.packages("ggplot2")
+Warning in install.packages("ggplot2") :
+  'lib = "C:/Program Files/R/R-3.2.0/library"' is not writable
+--- Please select a CRAN mirror for use in this session ---
+also installing the dependencies ‘stringi’, ‘magrittr’, ‘colorspace’, ‘Rcpp’, ‘stringr’, ‘RColorBrewer’, ‘dichromat’, ‘munsell’, ‘labeling’, ‘plyr’, ‘digest’, ‘gtable’, ‘reshape2’, ‘scales’, ‘proto’
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/stringi_0.4-1.zip'
+Content type 'application/zip' length 13432789 bytes (12.8 MB)
+downloaded 12.8 MB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/magrittr_1.5.zip'
+Content type 'application/zip' length 148933 bytes (145 KB)
+downloaded 145 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/colorspace_1.2-6.zip'
+Content type 'application/zip' length 389775 bytes (380 KB)
+downloaded 380 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/Rcpp_0.11.6.zip'
+Content type 'application/zip' length 3173712 bytes (3.0 MB)
+downloaded 3.0 MB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/stringr_1.0.0.zip'
+Content type 'application/zip' length 82789 bytes (80 KB)
+downloaded 80 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/RColorBrewer_1.1-2.zip'
+Content type 'application/zip' length 26732 bytes (26 KB)
+downloaded 26 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/dichromat_2.0-0.zip'
+Content type 'application/zip' length 147650 bytes (144 KB)
+downloaded 144 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/munsell_0.4.2.zip'
+Content type 'application/zip' length 126266 bytes (123 KB)
+downloaded 123 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/labeling_0.3.zip'
+Content type 'application/zip' length 40846 bytes (39 KB)
+downloaded 39 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/plyr_1.8.2.zip'
+Content type 'application/zip' length 1129109 bytes (1.1 MB)
+downloaded 1.1 MB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/digest_0.6.8.zip'
+Content type 'application/zip' length 151927 bytes (148 KB)
+downloaded 148 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/gtable_0.1.2.zip'
+Content type 'application/zip' length 63797 bytes (62 KB)
+downloaded 62 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/reshape2_1.4.1.zip'
+Content type 'application/zip' length 504594 bytes (492 KB)
+downloaded 492 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/scales_0.2.4.zip'
+Content type 'application/zip' length 152975 bytes (149 KB)
+downloaded 149 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/proto_0.3-10.zip'
+Content type 'application/zip' length 458541 bytes (447 KB)
+downloaded 279 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/ggplot2_1.0.1.zip'
+Error in download.file(url, destfile, method, mode = "wb", ...) : 
+  cannot open URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/ggplot2_1.0.1.zip'
+In addition: Warning messages:
+1: In download.file(url, destfile, method, mode = "wb", ...) :
+  downloaded length 286431 != reported length 458541
+2: In download.file(url, destfile, method, mode = "wb", ...) :
+  unable to connect to 'ftp.iitm.ac.in' on port 80.
+Warning in download.packages(pkgs, destdir = tmpd, available = available,  :
+  download of package ‘ggplot2’ failed
+package ‘stringi’ successfully unpacked and MD5 sums checked
+package ‘magrittr’ successfully unpacked and MD5 sums checked
+package ‘colorspace’ successfully unpacked and MD5 sums checked
+package ‘Rcpp’ successfully unpacked and MD5 sums checked
+package ‘stringr’ successfully unpacked and MD5 sums checked
+package ‘RColorBrewer’ successfully unpacked and MD5 sums checked
+package ‘dichromat’ successfully unpacked and MD5 sums checked
+package ‘munsell’ successfully unpacked and MD5 sums checked
+package ‘labeling’ successfully unpacked and MD5 sums checked
+package ‘plyr’ successfully unpacked and MD5 sums checked
+package ‘digest’ successfully unpacked and MD5 sums checked
+package ‘gtable’ successfully unpacked and MD5 sums checked
+package ‘reshape2’ successfully unpacked and MD5 sums checked
+package ‘scales’ successfully unpacked and MD5 sums checked
+Error in read.dcf(file.path(pkgname, "DESCRIPTION"), c("Package", "Type")) : 
+  cannot open the connection
+In addition: Warning messages:
+1: In unzip(zipname, exdir = dest) : error 1 in extracting from zip file
+2: In read.dcf(file.path(pkgname, "DESCRIPTION"), c("Package", "Type")) :
+  cannot open compressed file 'proto/DESCRIPTION', probable reason 'No such file or directory'
+> ggplot(data=reqs, aes(x=as.Date(Var1), y=Freq)) + geom_line() + xlab('Date') + ylab('Requests') + opts(title='Traffic to Site')
+Error: could not find function "ggplot"
+> install.packages("ggplot2")
+Installing package into ‘C:/Users/USER/Documents/R/win-library/3.2’
+(as ‘lib’ is unspecified)
+also installing the dependency ‘proto’
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/proto_0.3-10.zip'
+Content type 'application/zip' length 458541 bytes (447 KB)
+downloaded 447 KB
+
+trying URL 'http://ftp.iitm.ac.in/cran/bin/windows/contrib/3.2/ggplot2_1.0.1.zip'
+Content type 'application/zip' length 2676181 bytes (2.6 MB)
+downloaded 2.6 MB
+
+package ‘proto’ successfully unpacked and MD5 sums checked
+package ‘ggplot2’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\USER\AppData\Local\Temp\Rtmpa8wZKK\downloaded_packages
+> ggplot(data=reqs, aes(x=as.Date(Var1), y=Freq)) + geom_line() + xlab('Date') + ylab('Requests') + opts(title='Traffic to Site')
+Error: could not find function "ggplot"
+> require(ggplot2)
+Loading required package: ggplot2
+> ggplot(data=reqs, aes(x=as.Date(Var1), y=Freq)) + geom_line() + xlab('Date') + ylab('Requests') + opts(title='Traffic to Site')
+Error: 'opts' is deprecated. Use 'theme' instead. (Defunct; last used in version 0.9.1)
+> ggplot(data=reqs, aes(x=as.Date(Var1), y=Freq)) + geom_line() + xlab('Date') + ylab('Requests') + theme(title='Traffic to Site')
+Error in (function (el, elname)  : 
+  Element title must be a element_text object.
+> ggplot(data=reqs, aes(x=as.Date(Var1), y=Freq)) + geom_line() + xlab('Date') + ylab('Requests') + opts(title='Traffic to Site')
+Error: 'opts' is deprecated. Use 'theme' instead. (Defunct; last used in version 0.9.1)
+> ggplot(data=reqs, aes(x=as.Date(Var1), y=Freq)) + geom_line() + xlab('Date') + ylab('Requests') + theme_blank(title='Traffic to Site')
+Error: 'theme_blank' is deprecated. Use 'element_blank' instead. (Defunct; last used in version 0.9.1)
+> ggplot(data=reqs, aes(x=as.Date(Var1), y=Freq)) + geom_line() + xlab('Date') + ylab('Requests') + element_blank(title='Traffic to Site')
+Error in element_blank(title = "Traffic to Site") : 
+  unused argument (title = "Traffic to Site")
+> ggplot(data=reqs, aes(x=as.Date(Var1), y=Freq)) + geom_line() + xlab('Date') + ylab('Requests') + theme(title='Traffic to Site')
+Error in (function (el, elname)  : 
+  Element title must be a element_text object.
+> ggplot(data=reqs, aes(x=as.Date(Var1), y=Freq)) + geom_line() + xlab('Date') + ylab('Requests')
+> ggplot(data=df, aes(x=format(status))) + geom_bar() + xlab('Status') + ylab('Count'
++ 
++ )
+> ggplot(data=df, aes(x=format(status))) + geom_bar() + xlab('Status') + ylab('Count')
+> colnames(df)=c('host','ident','authuser','date-and-time','request','status','bytes','duration','unalysed')
+> df$date-and-time=as.Date(df$date-and-time,"[%d/%b/%Y:%d:%d"%:d")
+Error: unexpected input in "df$date-and-time=as.Date(df$date-and-time,"[%d/%b/%Y:%d:%d"%:d")"
+> df$date-and-time=as.Date(df$date-and-time,"[%d/%b/%Y:%R:%S")
+Error in as.Date(df$date - and - time, "[%d/%b/%Y:%R:%S") : 
+  object 'and' not found
+> df$date-and-time=as.Date(df$date-and-time,"[%d/%b/%Y:%R:%S")
+Error in as.Date(df$date - and - time, "[%d/%b/%Y:%R:%S") : 
+  object 'and' not found
+> colnames(df)=c('host','ident','authuser','datetime','request','status','bytes','duration','unalysed')
+> df$datetime=as.Date(df$datetime,"[%d/%b/%Y:%R:%S")
+> head($df)
+Error: unexpected '$' in "head($"
+> head(df)
+           host ident authuser   datetime request                                              status bytes duration
+1 82.95.120.160     -        - 2009-05-14  -0700]                       GET www.twibuzz.com/ HTTP/1.1   200   112813
+2 82.95.120.160     -        - 2009-05-14  -0700]              GET www.twibuzz.com/style.css HTTP/1.1   200      639
+3 82.95.120.160     -        - 2009-05-14  -0700]               GET www.twibuzz.com/logo.png HTTP/1.1   200     5410
+4 82.95.120.160     -        - 2009-05-14  -0700]            GET www.twibuzz.com/favicon.ico HTTP/1.1   404        -
+5 66.249.70.102     -        - 2009-05-14  -0700] GET www.twibuzz.com/cgi/tweets.py?q=denver HTTP/1.1   200     7322
+6 66.249.70.102     -        - 2009-05-14  -0700]    GET www.twibuzz.com/cgi/tweets.py?q=nba HTTP/1.1   200     5898
+                 unalysed
+1                       -
+2 http://www.twibuzz.com/
+3 http://www.twibuzz.com/
+4 http://www.twibuzz.com/
+5                       -
+6                       -
+                                                                                                                       NA
+1 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+2 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+3 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+4 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+5                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+6                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+> colnames(df)=c('host','ident','authuser','date','time','ret','request','status','bytes','duration','unalysed')
+Error in `colnames<-`(`*tmp*`, value = c("host", "ident", "authuser",  : 
+  'names' attribute [11] must be the same length as the vector [10]
+> colnames(df)=c('host','ident','authuser','date','time','request','status','bytes','duration','unalysed')
+> df$datetime=as.Date(df$datetime,"[%d/%b/%Y")
+
+> head(df)
+           host ident authuser       date   time                                             request status  bytes
+1 82.95.120.160     -        - 2009-05-14 -0700]                       GET www.twibuzz.com/ HTTP/1.1    200 112813
+2 82.95.120.160     -        - 2009-05-14 -0700]              GET www.twibuzz.com/style.css HTTP/1.1    200    639
+3 82.95.120.160     -        - 2009-05-14 -0700]               GET www.twibuzz.com/logo.png HTTP/1.1    200   5410
+4 82.95.120.160     -        - 2009-05-14 -0700]            GET www.twibuzz.com/favicon.ico HTTP/1.1    404      -
+5 66.249.70.102     -        - 2009-05-14 -0700] GET www.twibuzz.com/cgi/tweets.py?q=denver HTTP/1.1    200   7322
+6 66.249.70.102     -        - 2009-05-14 -0700]    GET www.twibuzz.com/cgi/tweets.py?q=nba HTTP/1.1    200   5898
+                 duration
+1                       -
+2 http://www.twibuzz.com/
+3 http://www.twibuzz.com/
+4 http://www.twibuzz.com/
+5                       -
+6                       -
+                                                                                                                 unalysed
+1 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+2 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+3 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+4 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+5                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+6                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+> df$date=as.Date(df$date,"[%d/%b/%Y:%H:%M:%S %z]")
+> df$date=as.Date(df$date,"[%d/%b/%Y:%H:%M:%S %z]")
+> df$date=as.Date(df$date,"[%d/%b/%Y:%H:%M:%S %z]")
+> colnames(df)=c('host','ident','authuser','date','time','request','status','bytes','duration','unalysed')
+> df$date=as.Date(df$date,"[%d/%b/%Y:%H:%M:%S %z]")
+> head(df)
+           host ident authuser       date   time                                             request status  bytes
+1 82.95.120.160     -        - 2009-05-14 -0700]                       GET www.twibuzz.com/ HTTP/1.1    200 112813
+2 82.95.120.160     -        - 2009-05-14 -0700]              GET www.twibuzz.com/style.css HTTP/1.1    200    639
+3 82.95.120.160     -        - 2009-05-14 -0700]               GET www.twibuzz.com/logo.png HTTP/1.1    200   5410
+4 82.95.120.160     -        - 2009-05-14 -0700]            GET www.twibuzz.com/favicon.ico HTTP/1.1    404      -
+5 66.249.70.102     -        - 2009-05-14 -0700] GET www.twibuzz.com/cgi/tweets.py?q=denver HTTP/1.1    200   7322
+6 66.249.70.102     -        - 2009-05-14 -0700]    GET www.twibuzz.com/cgi/tweets.py?q=nba HTTP/1.1    200   5898
+                 duration
+1                       -
+2 http://www.twibuzz.com/
+3 http://www.twibuzz.com/
+4 http://www.twibuzz.com/
+5                       -
+6                       -
+                                                                                                                 unalysed
+1 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+2 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+3 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+4 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+5                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+6                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+> colnames(df)=c('host','ident','authuser','date','timezone','request','status','bytes','duration','unalysed')
+> head(df)
+           host ident authuser       date timezone                                             request status  bytes
+1 82.95.120.160     -        - 2009-05-14   -0700]                       GET www.twibuzz.com/ HTTP/1.1    200 112813
+2 82.95.120.160     -        - 2009-05-14   -0700]              GET www.twibuzz.com/style.css HTTP/1.1    200    639
+3 82.95.120.160     -        - 2009-05-14   -0700]               GET www.twibuzz.com/logo.png HTTP/1.1    200   5410
+4 82.95.120.160     -        - 2009-05-14   -0700]            GET www.twibuzz.com/favicon.ico HTTP/1.1    404      -
+5 66.249.70.102     -        - 2009-05-14   -0700] GET www.twibuzz.com/cgi/tweets.py?q=denver HTTP/1.1    200   7322
+6 66.249.70.102     -        - 2009-05-14   -0700]    GET www.twibuzz.com/cgi/tweets.py?q=nba HTTP/1.1    200   5898
+                 duration
+1                       -
+2 http://www.twibuzz.com/
+3 http://www.twibuzz.com/
+4 http://www.twibuzz.com/
+5                       -
+6                       -
+                                                                                                                 unalysed
+1 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+2 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+3 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+4 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+5                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+6                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+> df$date=as.Date(df$date,"[%d/%b/%Y:%H:%M:%S")
+> head(df)
+           host ident authuser       date timezone                                             request status  bytes
+1 82.95.120.160     -        - 2009-05-14   -0700]                       GET www.twibuzz.com/ HTTP/1.1    200 112813
+2 82.95.120.160     -        - 2009-05-14   -0700]              GET www.twibuzz.com/style.css HTTP/1.1    200    639
+3 82.95.120.160     -        - 2009-05-14   -0700]               GET www.twibuzz.com/logo.png HTTP/1.1    200   5410
+4 82.95.120.160     -        - 2009-05-14   -0700]            GET www.twibuzz.com/favicon.ico HTTP/1.1    404      -
+5 66.249.70.102     -        - 2009-05-14   -0700] GET www.twibuzz.com/cgi/tweets.py?q=denver HTTP/1.1    200   7322
+6 66.249.70.102     -        - 2009-05-14   -0700]    GET www.twibuzz.com/cgi/tweets.py?q=nba HTTP/1.1    200   5898
+                 duration
+1                       -
+2 http://www.twibuzz.com/
+3 http://www.twibuzz.com/
+4 http://www.twibuzz.com/
+5                       -
+6                       -
+                                                                                                                 unalysed
+1 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+2 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+3 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+4 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+5                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+6                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+> df$date=as.Date(df$date,"[%d/%b/%Y/%H/%M/%S")
+> head(df)
+           host ident authuser       date timezone                                             request status  bytes
+1 82.95.120.160     -        - 2009-05-14   -0700]                       GET www.twibuzz.com/ HTTP/1.1    200 112813
+2 82.95.120.160     -        - 2009-05-14   -0700]              GET www.twibuzz.com/style.css HTTP/1.1    200    639
+3 82.95.120.160     -        - 2009-05-14   -0700]               GET www.twibuzz.com/logo.png HTTP/1.1    200   5410
+4 82.95.120.160     -        - 2009-05-14   -0700]            GET www.twibuzz.com/favicon.ico HTTP/1.1    404      -
+5 66.249.70.102     -        - 2009-05-14   -0700] GET www.twibuzz.com/cgi/tweets.py?q=denver HTTP/1.1    200   7322
+6 66.249.70.102     -        - 2009-05-14   -0700]    GET www.twibuzz.com/cgi/tweets.py?q=nba HTTP/1.1    200   5898
+                 duration
+1                       -
+2 http://www.twibuzz.com/
+3 http://www.twibuzz.com/
+4 http://www.twibuzz.com/
+5                       -
+6                       -
+                                                                                                                 unalysed
+1 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+2 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+3 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+4 Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16
+5                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+6                                                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+> colnames(df)=c('host','ident','authuser','date','time','request','status','bytes','duration','unalysed')
+log = read.table("C:\\Users\\USER\\Downloads\\weblog.txt", sep=" ", header=F)
+> name(lo)
+Error: could not find function "name"
+> name(log)
+Error: could not find function "name"
+> names(log)
+ [1] "V1"  "V2"  "V3"  "V4"  "V5"  "V6"  "V7"  "V8"  "V9"  "V10"
+> attach(log)
+> summary(v11)
+Error in summary(v11) : object 'v11' not found
+> summary(v10)
+Error in summary(v10) : object 'v10' not found
+> summary(V10)
+                                                                                                                                                             Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html) 
+                                                                                                                                                                                                                                  721 
+                                                                                                                                              Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp) 
+                                                                                                                                                                                                                                  388 
+                                                                                                               Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.65 Safari/525.19 
+                                                                                                                                                                                                                                  196 
+                                                                                                                                                                Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; GTB6) 
+                                                                                                                                                                                                                                   68 
+                                                                                                                                   Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0) 
+                                                                                                                                                                                                                                   67 
+                                                                                                                                  Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.10) Gecko/2009042315 Firefox/3.0.10 
+                                                                                                                                                                                                                                   66 
+                                                                                                                                        Mozilla/5.0 (X11; U; Linux i686 (x86_64); en-US; rv:1.8.1.20) Gecko/20090402 Firefox/2.0.0.20 
+                                                                                                                                                                                                                                   60 
+                                                                                                      Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_6; en-us) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/3.2.1 Safari/525.27.1 
+                                                                                                                                                                                                                                   42 
+                                                                                                                                                          ia_archiver (+http://www.alexa.com/site/help/webmasters; crawler@alexa.com) 
+                                                                                                                                                                                                                                   39 
+                                                                                                                                            Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 
+                                                                                                                                                                                                                                   33 
+                                                                                                                                                                   Mozilla/5.0 (Twiceler-0.9 http://www.cuil.com/twiceler/robot.html) 
+                                                                                                                                                                                                                                   32 
+                                                                                                                                         Mozilla/5.0 (Windows; U; Windows NT 5.1; es-ES; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 
+                                                                                                                                                                                                                                   32 
+                                                                                                                                                                                   Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1) 
+                                                                                                                                                                                                                                   29 
+                                                                                                                             Mozilla/5.0 (X11; U; Linux i686; uk; rv:1.9.0.10) Gecko/2009042523 Ubuntu/8.10 (intrepid) Firefox/3.0.10 
+                                                                                                                                                                                                                                   29 
+                                                                                                                                                  Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp) 
+                                                                                                                                                                                                                                   28 
+                                                                                           Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30618) 
+                                                                                                                                                                                                                                   27 
+                                                                                                            Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_6; en-us) AppleWebKit/528.16 (KHTML, like Gecko) Version/4.0 Safari/528.16 
+                                                                                                                                                                                                                                   24 
+                                                                                                                                         Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-BR; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 
+                                                                                                                                                                                                                                   23 
+Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; .NET CLR 1.1.4322; .NET CLR 2.0.50727; OfficeLiveConnector.1.3; OfficeLivePatch.0.0; msn OptimizedIE8;ESXL) 
+                                                                                                                                                                                                                                   21 
+                                                                                                                                         Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.20) Gecko/20081217 Firefox/2.0.0.20 
+                                                                                                                                                                                                                                   21 
+                                                                                        Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.04506.648) 
+                                                                                                                                                                                                                                   19 
+                                                                                                                                               Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; InfoPath.1) 
+                                                                                                                                                                                                                                   19 
+                                                                                                               Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; MS-RTC LM 8; InfoPath.2) 
+                                                                                                                                                                                                                                   19 
+                                                                       Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.2; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.1; MS-RTC LM 8; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729) 
+                                                                                                                                                                                                                                   19 
+                                                                                                                                         Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 
+                                                                                                                                                                                                                                   19 
+                                                                                                                                         Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 
+                                                                                                                                                                                                                                   17 
+                                                                                                                    Mozilla/5.0 (Windows; U; Windows NT 5.1; es-ES; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 (.NET CLR 3.5.30729) 
+                                                                                                                                                                                                                                   16 
+                                                                                                                                         Mozilla/5.0 (Windows; U; Windows NT 6.0; pt-BR; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 
+                                                                                                                                                                                                                                   15 
+                                                                                                      Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_7; de-de) AppleWebKit/525.28.3 (KHTML, like Gecko) Version/3.2.3 Safari/525.28.3 
+                                                                                                                                                                                                                                   14 
+                                                                                                                   Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en; rv:1.8.1.21) Gecko/20090327 Camino/1.6.7 (like Firefox/2.0.0.21pre) 
+                                                                                                                                                                                                                                   14 
+                                                                                                                                            Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 
+                                                                                                                                                                                                                                   13 
+                                                                                                                       Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 (.NET CLR 3.5.30729) 
+                                                                                                                                                                                                                                   13 
+                                                                                                                        Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.0.10) Gecko/2009042523 Ubuntu/8.10 (intrepid) Firefox/3.0.10 
+                                                                                                                                                                                                                                   13 
+                                                                                                                     YahooFeedSeeker/2.0 (compatible; Mozilla 4.0; MSIE 5.5; http://publisher.yahoo.com/rssguide; users 1; views 101) 
+                                                                                                                                                                                                                                   13 
+                                                                                                                                            Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727) 
+                                                                                                                                                                                                                                   12 
+                                                                                                                             Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.10) Gecko/2009042315 Firefox/3.0.10 GTB5 
+                                                                                                                                                                                                                                   12 
+                                                                                                                      Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.12; ips-agent) Gecko/20050922 Fedora/1.0.7-1.1.fc4 Firefox/1.0.7 
+                                                                                                                                                                                                                                   12 
+                                                                                                                                                                                                                        WordPress/2.7 
+                                                                                                                                                                                                                                   12 
+                                                                                                                           Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.1b4) Gecko/20090423 Firefox/3.5b4 (.NET CLR 3.5.30729) 
+                                                                                                                                                                                                                                   11 
+                                                                                                                                         Mozilla/5.0 (Windows; U; Windows NT 6.0; es-AR; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 
+                                                                                                                                                                                                                                   11 
+                                                                                                                                                                                   Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0) 
+                                                                                                                                                                                                                                   10 
+                                              Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; GTB6; .NET CLR 1.1.4322; .NET CLR 1.0.3705; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; MS-RTC LM 8) 
+                                                                                                                                                                                                                                   10 
+                                                                                                                                 Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 FBSMTWB 
+                                                                                                                                                                                                                                   10 
+                                                                                                                                                                              Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) 
+                                                                                                                                                                                                                                    9 
+                                                                                                                                         Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; MRA 4.3 (build 01218); .NET CLR 1.1.4322) 
+                                                                                                                                                                                                                                    8 
+                                                                                                                                                           Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322) 
+                                                                                                                                                                                                                                    8 
+                                                                                                                                       Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727) 
+                                                                                                                                                                                                                                    8 
+                                                                                                                                                                Mozilla/5.0 (compatible; Exabot/3.0; +http://www.exabot.com/go/robot) 
+                                                                                                                                                                                                                                    8 
+                                                                                                                            Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.0.8) Gecko/2009033100 Ubuntu/9.04 (jaunty) Firefox/3.0.8 
+                                                                                                                                                                                                                                    8 
+                                                                                                                                                                     Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; Win64; AMD64) 
+                                                                                                                                                                                                                                    7 
+                                                                                                                                                                               Mozilla/4.61 [en] (X11; U; ) - BrowseX (2.0.0 Windows) 
+                                                                                                                                                                                                                                    7 
+                                                                                                                      YahooFeedSeeker/2.0 (compatible; Mozilla 4.0; MSIE 5.5; http://publisher.yahoo.com/rssguide; users 1; views 78) 
+                                                                                                                                                                                                                                    7 
+                                                                                                                                                                                                           Mozilla/0.6 Beta (Windows) 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                                                                     Mozilla/1.22 (compatible; MSIE 2.0d; Windows NT) 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                                                Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 4.0; .NET CLR 1.0.2914) 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                                                                   Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0) 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                                          Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; FREE; .NET CLR 1.1.4322) 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                                                    Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; ru) Opera 8.50 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                 Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; YPC 3.0.2; .NET CLR 1.1.4322; yplus 4.4.02b) 
+                                                                                                                                                                                                                                    6 
+                                                                                                                           Mozilla/4.0 (compatible; MSIE 6.0; Windows NT) ::ELNSB50::000061100320025802a00111000000000507000900000000 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                    Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506) 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                            Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+5.2;+.NET+CLR+1.1.4322;+.NET+CLR+2.0.50727) 
+                                                                                                                                                                                                                                    6 
+                                                                                                          Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_4_11; en) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/3.2.1 Safari/525.27.1 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                                                                       Mozilla/5.0 (Windows NT 5.1; U; en) Opera 8.00 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                           Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-BR; rv:1.8.1.5) Gecko/20070713 Firefox/2.0.0.5 
+                                                                                                                                                                                                                                    6 
+                                                                                                                           Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-BR; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 FirePHP/0.2.4 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                                                                                 Opera/7.54 (Windows NT 5.1; U)  [pl] 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                                                                                          Opera/8.01 (Windows NT 5.1) 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                                                                                   Opera/9.01 (Windows NT 5.1; U; en) 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                         YahooFeedSeeker/2.0 (compatible; Mozilla 4.0; MSIE 5.5; http://publisher.yahoo.com/rssguide) 
+                                                                                                                                                                                                                                    6 
+                                                                                                                                           Feedfetcher-Google; (+http://www.google.com/feedfetcher.html; feed-id=7705655773661080647) 
+                                                                                                                                                                                                                                    5 
+                                                                                                                                                                          Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Win 9x 4.90) 
+                                                                                                                                                                                                                                    5 
+                                                                                                    Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0; .NET CLR 2.0.50727) 
+                                                                                                                                                                                                                                    5 
+                                                                                                                                     Mozilla/5.0 (compatible; Ask Jeeves/Teoma; +http://about.ask.com/en/docs/about/webmasters.shtml) 
+                                                                                                                                                                                                                                    5 
+                                                                                                                    Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 (.NET CLR 3.5.30729) 
+                                                                                                                                                                                                                                    5 
+                                                                                                                                    Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 GTB5 
+                                                                                                                                                                                                                                    5 
+                                                                                                                                    Mozilla/5.0 (Windows; U; Windows NT 5.1; es-ES; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 GTB5 
+                                                                                                                                                                                                                                    5 
+                                                                                                                                    Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 GTB5 
+                                                                                                                                                                                                                                    5 
+                                                                                                                    Mozilla/5.0 (Windows; U; Windows NT 6.0; es-AR; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 (.NET CLR 3.5.30729) 
+                                                                                                                                                                                                                                    5 
+                                                                                                                    Mozilla/5.0 (Windows; U; Windows NT 6.1; es-ES; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 (.NET CLR 3.5.30729) 
+                                                                                                                                                                                                                                    5 
+                                                                                                                            Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.10) Gecko/2009042523 Ubuntu/9.04 (jaunty) Firefox/3.0.10 
+                                                                                                                                                                                                                                    5 
+                                                                                                                                                   Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/2008102920 Firefox/3.0.4 
+                                                                                                                                                                                                                                    5 
+                                                                                                                                                                            Mozilla/6.0 (compatible; MSIE 7.0a1; Windows NT 5.2; SV1) 
+                                                                                                                                                                                                                                    5 
+                                                                                                                                                                                                                                    - 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                                      Mozilla/1.22 (compatible; MSIE 2.0; Windows 95) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                             Mozilla/2.0 (compatible; MSIE 3.02; Windows CE; 240x320) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                                      Mozilla/4.0 (compatible; MSIE 5.0; Windows 3.1) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                          Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; T312461) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                    Mozilla/4.0 (compatible; MSIE 6.0; Update a; AOL 6.0; Windows 98) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                             Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; .NET CLR 1.0.3705; .NET CLR 1.1.4322) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                             Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; KTXN) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                          Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; T312461) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                    Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; en) Opera 8.00 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                 Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; es-ES) Opera 9.64 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                         Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; KKman2.0) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                       Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Maxthon; .NET CLR 1.1.4322) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                    Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; ru) Opera 8.01 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                              Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; FunWebProducts) 
+                                                                                                                                                                                                                                    4 
+                                                                                                                                                                                                                              (Other) 
+                                                                                                                                                                                                                                  202 
+> table(log[,7])
+
+ 200  206  302  304  404  500 
+2196    1  151  203  226    1 
+> barplot(table(LOGS[,7]))
+>  newV4 <- strptime(V4 , format(‘[%d/%b/%Y:%H:%M:%S’))
+Error: unexpected input in " newV4 <- strptime(V4 , format(‘"
+>  newV4 <- strptime(V4 , format('[%d/%b/%Y:%H:%M:%S'))
+>  day = format(newV4, “%A”)
+Error: unexpected input in " day = format(newV4, “"
+>  day = format(newV4, "%A")
+> head(day)
+[1] "Thursday" "Thursday" "Thursday" "Thursday" "Thursday" "Thursday"
+> hours = format(newV4, "%H")
+> barplot( table(factor(day, levels=c("Monday", "Tuesday", "Wednesday",
++ "Thursday", "Friday", "Saturday", "Sunday"))), xlab="Day", ylab="Count",
++ col="red", border="blue", main='Visits Per Weekday')
+> barplot(table(hours), xlab="Hour", ylab="Count", col="lightgreen",
++ las=2, border="gray")
+> 
